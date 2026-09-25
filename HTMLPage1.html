@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое лето 2026 | Хроники трех месяцев</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-teal: #1a535c;
+            --turquoise: #4ecdc4;
+            --coral: #ff6b6b;
+            --sand: #f7fff7;
+            --gold: #f9ca24;
+            --amber: #f0932b
+        }
+
+        body {
+            font-family: 'Montserrat',sans-serif;
+            background: linear-gradient(160deg,#f7fff7 0%,#d4e8e5 50%,#a8d0cc 100%);
+            background-attachment: fixed;
+            color: #2c3e50;
+            overflow-x: hidden
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display',serif
+        }
+
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            transition: transform .6s cubic-bezier(.34,1.56,.64,1),opacity .3s ease;
+            will-change: transform;
+            animation: float 6s ease-in-out infinite
+        }
+
+            .bubble:nth-child(1) {
+                width: 90px;
+                height: 90px;
+                left: 8%;
+                top: 15%;
+                background: radial-gradient(circle at 30% 30%,rgba(255,107,107,.6),rgba(255,107,107,.15));
+                border: 2px solid rgba(255,107,107,.5);
+                box-shadow: 0 0 25px rgba(255,107,107,.3)
+            }
+
+            .bubble:nth-child(2) {
+                width: 130px;
+                height: 130px;
+                left: 78%;
+                top: 8%;
+                background: radial-gradient(circle at 30% 30%,rgba(249,202,36,.6),rgba(249,202,36,.15));
+                border: 2px solid rgba(249,202,36,.5);
+                box-shadow: 0 0 25px rgba(249,202,36,.3);
+                animation-duration: 8s;
+                animation-delay: -1s
+            }
+
+            .bubble:nth-child(3) {
+                width: 60px;
+                height: 60px;
+                left: 45%;
+                top: 65%;
+                background: radial-gradient(circle at 30% 30%,rgba(78,205,196,.7),rgba(78,205,196,.2));
+                border: 2px solid rgba(78,205,196,.6);
+                box-shadow: 0 0 20px rgba(78,205,196,.4);
+                animation-duration: 5s;
+                animation-delay: -2s
+            }
+
+            .bubble:nth-child(4) {
+                width: 160px;
+                height: 160px;
+                left: 15%;
+                top: 75%;
+                background: radial-gradient(circle at 30% 30%,rgba(240,147,43,.5),rgba(240,147,43,.1));
+                border: 2px solid rgba(240,147,43,.4);
+                box-shadow: 0 0 30px rgba(240,147,43,.25);
+                animation-duration: 9s;
+                animation-delay: -3s
+            }
+
+            .bubble:nth-child(5) {
+                width: 75px;
+                height: 75px;
+                left: 68%;
+                top: 45%;
+                background: radial-gradient(circle at 30% 30%,rgba(255,107,107,.55),rgba(255,107,107,.15));
+                border: 2px solid rgba(255,107,107,.5);
+                box-shadow: 0 0 22px rgba(255,107,107,.3);
+                animation-duration: 7s;
+                animation-delay: -1.5s
+            }
+
+            .bubble:nth-child(6) {
+                width: 100px;
+                height: 100px;
+                left: 88%;
+                top: 70%;
+                background: radial-gradient(circle at 30% 30%,rgba(78,205,196,.6),rgba(78,205,196,.15));
+                border: 2px solid rgba(78,205,196,.5);
+                box-shadow: 0 0 25px rgba(78,205,196,.35);
+                animation-duration: 10s;
+                animation-delay: -4s
+            }
+
+        @keyframes float {
+            0%,100% {
+                margin-top: 0;
+                margin-left: 0
+            }
+
+            25% {
+                margin-top: -15px;
+                margin-left: 8px
+            }
+
+            50% {
+                margin-top: -25px;
+                margin-left: -5px
+            }
+
+            75% {
+                margin-top: -10px;
+                margin-left: -10px
+            }
+        }
+
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 5px solid rgba(255,255,255,.2);
+            color: #fff;
+            box-shadow: 0 15px 40px rgba(26,83,92,.4);
+            background: linear-gradient(135deg,rgba(26,83,92,.85) 0%,rgba(78,205,196,.7) 100%),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+            overflow: hidden
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at 50% 50%,transparent 0%,rgba(0,0,0,.15) 100%);
+                pointer-events: none
+            }
+
+            .hero .container {
+                position: relative;
+                z-index: 1
+            }
+
+            .hero h1 {
+                text-shadow: 2px 2px 15px rgba(0,0,0,.4)
+            }
+
+            .hero p {
+                text-shadow: 1px 1px 8px rgba(0,0,0,.3)
+            }
+
+        .glass-card {
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(26,83,92,.15)
+        }
+
+        .polaroid {
+            background: #f7fff7;
+            padding: 15px 15px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.5);
+            transform: rotate(-3deg);
+            transition: transform .3s ease;
+            display: inline-block;
+            max-width: 100%;
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,.5)
+        }
+
+            .polaroid:hover {
+                transform: rotate(0) scale(1.05)
+            }
+
+            .polaroid img {
+                width: 100%;
+                height: auto;
+                border-radius: 2px
+            }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0
+        }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 4px;
+                background: linear-gradient(to bottom,#ff6b6b,#4ecdc4,#f9ca24);
+                transform: translateX(-50%);
+                border-radius: 2px
+            }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative
+        }
+
+            .timeline-item::after {
+                content: '';
+                display: block;
+                clear: both
+            }
+
+        .timeline-icon {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.6rem;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,.25);
+            border: 3px solid #f7fff7;
+            font-family: 'Playfair Display',serif
+        }
+
+            .timeline-icon span {
+                display: inline-block;
+                animation: spin 20s linear infinite
+            }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .icon-june {
+            background: radial-gradient(circle at 30% 30%,#ffa07a,#d63031)
+        }
+
+        .icon-july {
+            background: radial-gradient(circle at 30% 30%,#4ecdc4,#1a535c)
+        }
+
+        .icon-august {
+            background: radial-gradient(circle at 30% 30%,#f9ca24,#e17055)
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 25px 30px;
+            position: relative;
+            transition: transform .3s ease
+        }
+
+            .timeline-content:hover {
+                transform: translateY(-5px)
+            }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            float: left;
+            text-align: right
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            float: right
+        }
+
+        .month-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.5rem
+        }
+
+        .title-june {
+            color: #d63031
+        }
+
+        .title-july {
+            color: #1a535c
+        }
+
+        .title-august {
+            color: #e17055
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .3s ease;
+            box-shadow: 0 5px 15px rgba(26,83,92,.2);
+            border: 3px solid #f7fff7
+        }
+
+            .gallery-img:hover {
+                transform: scale(1.05) rotate(2deg);
+                box-shadow: 0 10px 25px rgba(26,83,92,.3);
+                z-index: 2;
+                position: relative
+            }
+
+        .gallery-title {
+            color: #1a535c;
+            text-shadow: 1px 1px 3px rgba(255,255,255,.8)
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                background-attachment: scroll
+            }
+
+            .timeline::before {
+                left: 20px
+            }
+
+            .timeline-icon {
+                left: 20px
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                float: right !important;
+                text-align: left !important
+            }
+
+            .gallery-img {
+                height: 200px
+            }
+        }
+
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background: linear-gradient(135deg,#1a535c 0%,#4ecdc4 100%);
+            color: #fff;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(26,83,92,.4);
+            transition: all .3s ease
+        }
+
+            #scrollTopBtn:hover {
+                transform: scale(1.1) rotate(-10deg)
+            }
+
+        footer {
+            background: linear-gradient(135deg,#1a535c 0%,#2c8a95 100%);
+            color: #f7fff7
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles" id="bubblesContainer">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4 mb-4 fw-bold">Как я провела это лето</h1>
+            <p class="lead mb-5" style="opacity:.95">История о перезагрузке, новых эмоциях и теплых воспоминаниях</p>
+            <div class="polaroid mt-4">
+                <img src="my-photo.jpg" alt="Мое летнее фото" style="max-height:400px;object-fit:cover">
+                <p class="mt-3 mb-0 text-muted" style="font-family:'Playfair Display',serif;font-style:italic">Лето 2026 ✨</p>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5 py-4">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-june"><span>❋</span></div>
+                        <div class="timeline-content glass-card">
+                            <h3 class="month-title title-june">Июнь: Экзамены и перемены</h3>
+                            <p>Начало лета выдалось жарким не только по погоде, но и по эмоциям. У меня все еще заканчивалась учеба, шла напряженная сессия. Но чтобы начать лето с чистого листа, я решилась на смелый шаг — <strong>продала свои волосы</strong>. Теперь у меня стильная, легкая стрижка, которая идеально подходит для жарких дней!</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-july"><span>✾</span></div>
+                        <div class="timeline-content glass-card">
+                            <h3 class="month-title title-july">Июль: Время практики</h3>
+                            <p>Середина лета прошла под знаком профессионального роста. Я проходила летнюю практику на базе <strong>ГУ «БелИСА»</strong>. Это был бесценный опыт, полное погружение в рабочую атмосферу, новые знакомства и понимание того, как теория превращается в реальные дела.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-august"><span>❁</span></div>
+                        <div class="timeline-content glass-card">
+                            <h3 class="month-title title-august">Август: Перезагрузка</h3>
+                            <p>Последний месяц лета я посвятила исключительно себе. Я немного попутешествовала по родной <strong>Беларуси</strong>, открывая для себя новые уютные уголки. Наконец-то я <strong>отсыпалась</strong> за весь тяжелый год и проводила долгие вечера с семьей. Август подарил мне гармонию и спокойствие.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5 py-4">
+        <h2 class="text-center gallery-title mb-5">Мои летние моменты 📸</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-sm-6"><img src="photo1.jpg" alt="Фото 1" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src)"></div>
+            <div class="col-md-4 col-sm-6"><img src="photo2.jpg" alt="Фото 2" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src)"></div>
+            <div class="col-md-4 col-sm-6"><img src="photo3.jpg" alt="Фото 3" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src)"></div>
+        </div>
+    </section>
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body text-center p-0">
+                    <img src="" id="modalImage" class="img-fluid rounded shadow-lg" style="max-height:85vh">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center py-4 mt-5">
+        <p class="mb-0">© 2026 Мои летние воспоминания. Создано с душой.</p>
+    </footer>
+    <button id="scrollTopBtn" title="Наверх">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showImage(src) { document.getElementById('modalImage').src = src }
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function () { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) { scrollTopBtn.style.display = "block" } else { scrollTopBtn.style.display = "none" } };
+        scrollTopBtn.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }) };
+        const bubbles = document.querySelectorAll('.bubble');
+        const mouse = { x: -1000, y: -1000 };
+        const REPEL_RADIUS = 150;
+        const REPEL_FORCE = 120;
+        const bubbleData = Array.from(bubbles).map(bubble => { const rect = bubble.getBoundingClientRect(); return { element: bubble, originX: rect.left + rect.width / 2, originY: rect.top + rect.height / 2 } });
+        document.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY });
+        document.addEventListener('mouseleave', () => { mouse.x = -1000; mouse.y = -1000 });
+        function animateBubbles() { bubbleData.forEach(({ element, originX, originY }) => { const dx = originX - mouse.x; const dy = originY - mouse.y; const distance = Math.sqrt(dx * dx + dy * dy); if (distance < REPEL_RADIUS && distance > 0) { const force = (REPEL_RADIUS - distance) / REPEL_RADIUS; const pushX = (dx / distance) * force * REPEL_FORCE; const pushY = (dy / distance) * force * REPEL_FORCE; element.style.transform = `translate(${pushX}px,${pushY}px) scale(${1 + force * 0.15})`; element.style.opacity = 0.4 + force * 0.6 } else { element.style.transform = 'translate(0,0) scale(1)'; element.style.opacity = '' } }); requestAnimationFrame(animateBubbles) }
+        window.addEventListener('resize', () => { bubbleData.forEach(data => { const rect = data.element.getBoundingClientRect(); data.originX = rect.left + rect.width / 2; data.originY = rect.top + rect.height / 2 }) });
+        animateBubbles();
+    </script>
+</body>
+</html>
