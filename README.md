@@ -1,1 +1,1 @@
-https://github.io/yyulliam/wt-lab1-1git-marfel/index.html
+https://yyulliam.github.io/wt-lab1-1git-marfel/index.html
